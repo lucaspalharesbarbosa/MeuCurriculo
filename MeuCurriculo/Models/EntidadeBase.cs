@@ -7,9 +7,5 @@ namespace MeuCurriculo.Models {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual int Id { get; set; }
-
-        public DateTime DataCadastro { get; set; }
-
-        public bool IsDeleted { get; set; }
     }
 }
