@@ -31,14 +31,13 @@ namespace MeuCurriculo.Controllers {
             return View(habilidade);
         }
 
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Descricao,Id,DataCadastro,IsDeleted")] Habilidade habilidade) {
+        public async Task<IActionResult> Create([Bind("Id, Descricao")] Habilidade habilidade) {
             if (ModelState.IsValid) {
                 _db.Add(habilidade);
 
@@ -65,7 +64,7 @@ namespace MeuCurriculo.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Descricao,Id,DataCadastro,IsDeleted")] Habilidade habilidade) {
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Descricao")] Habilidade habilidade) {
             if (id != habilidade.Id) {
                 return NotFound();
             }
